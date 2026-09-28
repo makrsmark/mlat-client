@@ -22,7 +22,6 @@ import argparse
 
 import mlat.client.version
 import time
-import math
 
 from mlat.client import util
 from mlat.client.receiver import ReceiverConnection
@@ -151,7 +150,7 @@ location pin from the coverage maps.""",
         util.log("Successfully obtained location from GPSD. Lat: {lat}, Lon: {lon}, Alt: {alt}m", lat=lat, lon=lon, alt=alt)
         args.lat = lat
         args.lon = lon
-        args.alt = str(math.floor(alt))+'m'
+        args.alt = str(alt)
 
     # Check that lat/lon/alt are set
     if args.lat is None or args.lon is None or args.alt is None:
